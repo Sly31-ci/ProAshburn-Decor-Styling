@@ -269,18 +269,14 @@ strong {
   transform: translateY(-2px);
 }
 
-.logo-text {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  line-height: 1;
+.logo-image {
+  height: 60px;
+  width: auto;
+  transition: transform var(--transition-base);
 }
 
-.logo-subtitle {
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-secondary);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.logo:hover .logo-image {
+  transform: translateY(-2px);
 }
 
 .nav-menu {
