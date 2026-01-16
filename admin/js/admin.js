@@ -1148,17 +1148,20 @@ class AdminCMSEnhanced {
         {
           title: 'Décoration Intérieure',
           description: 'Transformez votre intérieur en un espace qui vous ressemble',
-          features: ['Design personnalisé', 'Mobilier sur mesure', 'Éclairage d\'ambiance']
+          features: ['Design personnalisé', 'Mobilier sur mesure', 'Éclairage d\'ambiance'],
+          image: '../assets/images/service-interior.jpg'
         },
         {
           title: 'Décoration Extérieure',
           description: 'Créez un espace extérieur harmonieux et accueillant',
-          features: ['Aménagement paysager', 'Mobilier d\'extérieur', 'Éclairage extérieur']
+          features: ['Aménagement paysager', 'Mobilier d\'extérieur', 'Éclairage extérieur'],
+          image: '../assets/images/service-exterior.jpg'
         },
         {
           title: 'Décoration Événementielle',
           description: 'Rendez vos événements inoubliables',
-          features: ['Mariages et réceptions', 'Événements d\'entreprise', 'Décoration saisonnière']
+          features: ['Mariages et réceptions', 'Événements d\'entreprise', 'Décoration saisonnière'],
+          image: '../assets/images/service-event.jpg'
         }
       ]
     };
@@ -1166,19 +1169,55 @@ class AdminCMSEnhanced {
     const servicesHtml = data.items.map((service, index) => `
     <div class="service-card">
       <h4>Service ${index + 1}</h4>
+      
+      <div class="service-image-preview" style="margin-bottom: var(--admin-space-md);">
+        <div class="portfolio-image-container" style="height: 150px;">
+          <img src="${service.image || '../assets/images/placeholder.jpg'}" 
+               alt="${service.title}" 
+               style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"
+               onerror="this.src='../assets/images/placeholder.jpg'">
+          <div class="portfolio-image-overlay">
+            <button type="button" class="image-change-btn" onclick="adminCMS.changeServiceImage(${index})">
+              📷 Changer l'image
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label>Image</label>
+        <input type="text" 
+               name="service_${index}_image" 
+               value="${service.image || ''}" 
+               class="form-input"
+               placeholder="Chemin de l'image (ex: ../assets/images/service-1.jpg)"
+               onchange="adminCMS.updateServiceItem(${index}, 'image', this.value)">
+        <small>Chemin relatif depuis /admin/</small>
+      </div>
+      
       <div class="form-group">
         <label>Titre</label>
-        <input type="text" name="service_${index}_title" value="${service.title}" class="form-input">
+        <input type="text" 
+               name="service_${index}_title" 
+               value="${service.title}" 
+               class="form-input"
+               onchange="adminCMS.updateServiceItem(${index}, 'title', this.value)">
       </div>
       
       <div class="form-group">
         <label>Description</label>
-        <textarea name="service_${index}_description" rows="2" class="form-input">${service.description}</textarea>
+        <textarea name="service_${index}_description" 
+                  rows="2" 
+                  class="form-input"
+                  onchange="adminCMS.updateServiceItem(${index}, 'description', this.value)">${service.description}</textarea>
       </div>
       
       <div class="form-group">
         <label>Caractéristiques (une par ligne)</label>
-        <textarea name="service_${index}_features" rows="3" class="form-input">${service.features.join('\n')}</textarea>
+        <textarea name="service_${index}_features" 
+                  rows="3" 
+                  class="form-input"
+                  onchange="adminCMS.updateServiceItem(${index}, 'features', this.value.split('\\n'))">${service.features.join('\n')}</textarea>
       </div>
     </div>
   `).join('');
@@ -1186,7 +1225,7 @@ class AdminCMSEnhanced {
     const html = `
     <div class="form-section">
       <h2 class="form-section-title">Services</h2>
-      <p class="form-description">Gérez vos services (actuellement limité à 3 services).</p>
+      <p class="form-description">Gérez vos services avec images, titres, descriptions et caractéristiques.</p>
       
       <div class="services-grid">
         ${servicesHtml}
@@ -1195,6 +1234,33 @@ class AdminCMSEnhanced {
   `;
 
     document.getElementById('contentArea').innerHTML = html;
+  }
+
+  updateServiceItem(index, field, value) {
+    if (!this.contentData.services) {
+      this.contentData.services = { items: [] };
+    }
+    if (!this.contentData.services.items[index]) {
+      this.contentData.services.items[index] = {};
+    }
+
+    this.contentData.services.items[index][field] = value;
+    this.isDirty = true;
+    this.updateSaveButton();
+
+    // Reload form to update image preview
+    if (field === 'image') {
+      this.loadServicesForm();
+    }
+  }
+
+  changeServiceImage(index) {
+    const currentImage = this.contentData.services?.items[index]?.image || '';
+    const newPath = prompt('Entrez le chemin de la nouvelle image (ex: ../assets/images/service-1.jpg):', currentImage);
+
+    if (newPath) {
+      this.updateServiceItem(index, 'image', newPath);
+    }
   }
 
   loadPortfolioForm() {
