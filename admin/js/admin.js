@@ -246,6 +246,10 @@ class AdminCMSEnhanced {
     // Load section
     this.currentSection = section;
     this.loadSection(section);
+
+    // Reset dirty flag after loading section
+    this.isDirty = false;
+    this.updateSaveButton();
   }
 
   loadSection(section) {
