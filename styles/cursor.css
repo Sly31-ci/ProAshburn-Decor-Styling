@@ -1,0 +1,89 @@
+/* ============================================
+   CUSTOM CURSOR - Luxury Interactive Cursor
+   ============================================ */
+
+/* Hide default cursor on desktop */
+@media (pointer: fine) {
+    * {
+        cursor: none !important;
+    }
+}
+
+.cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s ease,
+        width 0.3s ease,
+        height 0.3s ease;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    will-change: transform;
+}
+
+.cursor-dot {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1),
+        width 0.3s ease,
+        height 0.3s ease;
+    will-change: transform;
+}
+
+.cursor.hover {
+    transform: scale(1.8);
+    border-color: var(--color-accent-rose-gold);
+    width: 50px;
+    height: 50px;
+}
+
+.cursor.click {
+    transform: scale(0.6);
+}
+
+.cursor-dot.hover {
+    width: 4px;
+    height: 4px;
+}
+
+/* Cursor states for different elements */
+.cursor.link {
+    border-color: var(--color-secondary-light);
+    width: 60px;
+    height: 60px;
+}
+
+.cursor.button {
+    border-width: 3px;
+    border-color: var(--color-accent-emerald);
+}
+
+/* Mobile: Show default cursor */
+@media (pointer: coarse) {
+    * {
+        cursor: auto !important;
+    }
+
+    .cursor,
+    .cursor-dot {
+        display: none !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+
+    .cursor,
+    .cursor-dot {
+        transition: none;
+    }
+}

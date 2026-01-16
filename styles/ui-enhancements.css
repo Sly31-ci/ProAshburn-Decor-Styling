@@ -1,0 +1,220 @@
+/* ============================================
+   SCROLL INDICATOR - Premium Animated
+   ============================================ */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: var(--space-3xl);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: bounce 2s infinite ease-in-out;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.scroll-mouse {
+    width: 24px;
+    height: 40px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 12px;
+    margin: 0 auto var(--space-sm);
+    position: relative;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-mouse {
+    opacity: 1;
+    border-color: var(--color-secondary-light);
+}
+
+.scroll-wheel {
+    width: 4px;
+    height: 8px;
+    background: var(--color-secondary);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 2s infinite ease-in-out;
+}
+
+@keyframes scroll-wheel {
+
+    0%,
+    100% {
+        top: 8px;
+        opacity: 1;
+    }
+
+    50% {
+        top: 20px;
+        opacity: 0.3;
+    }
+}
+
+.scroll-text {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    margin-top: var(--space-sm);
+    opacity: 0.9;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        bottom: var(--space-xl);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-indicator {
+        animation: none;
+    }
+
+    .scroll-wheel {
+        animation: none;
+        top: 8px;
+    }
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS - Premium Feedback
+   ============================================ */
+
+.toast {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    background: var(--gradient-luxury);
+    color: var(--color-secondary);
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-xl);
+    border: 2px solid var(--color-secondary);
+    box-shadow: var(--shadow-2xl), 0 0 30px rgba(201, 165, 90, 0.3);
+    transform: translateY(200%);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 9999;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.toast.show {
+    transform: translateY(0);
+}
+
+.toast-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.toast-icon.success {
+    color: var(--color-accent-emerald);
+}
+
+.toast-icon.error {
+    color: #ef4444;
+}
+
+.toast-icon.info {
+    color: var(--color-secondary-light);
+}
+
+.toast-message {
+    flex: 1;
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: var(--color-secondary);
+    cursor: pointer;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .toast {
+        bottom: var(--space-md);
+        right: var(--space-md);
+        left: var(--space-md);
+        max-width: none;
+    }
+}
+
+/* ============================================
+   TESTIMONIALS PAGINATION DOTS
+   ============================================ */
+
+.testimonials-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+}
+
+.testimonial-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(201, 165, 90, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+}
+
+.testimonial-dot:hover {
+    background: rgba(201, 165, 90, 0.5);
+    transform: scale(1.2);
+}
+
+.testimonial-dot.active {
+    background: var(--gradient-gold);
+    width: 32px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(201, 165, 90, 0.5);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-dot:hover {
+        transform: none;
+    }
+}

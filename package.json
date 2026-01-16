@@ -1,0 +1,36 @@
+{
+    "name": "pro-ashburn-decor-styling",
+    "version": "1.0.0",
+    "description": "Site web vitrine professionnel pour entreprise de décoration",
+    "main": "index.html",
+    "scripts": {
+        "start": "npx http-server -p 8000 -c-1",
+        "build:ts": "tsc",
+        "watch:ts": "tsc --watch",
+        "serve": "python -m http.server 8000",
+        "lint:css": "stylelint 'styles/**/*.css'",
+        "format": "prettier --write '**/*.{html,css,js,ts,json,md}'"
+    },
+    "keywords": [
+        "decoration",
+        "interior-design",
+        "website",
+        "portfolio",
+        "typescript",
+        "html5",
+        "css3"
+    ],
+    "author": "Pro Ashburn Décor & Styling",
+    "license": "MIT",
+    "devDependencies": {
+        "typescript": "^5.3.3",
+        "prettier": "^3.1.1",
+        "stylelint": "^16.1.0",
+        "http-server": "^14.1.1"
+    },
+    "browserslist": [
+        "last 2 versions",
+        "> 1%",
+        "not dead"
+    ]
+}

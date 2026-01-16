@@ -1,0 +1,14 @@
+# Pro Ashburn Décor & Styling - Site Web
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://proashburndecor.com/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl-delay
+Crawl-delay: 1
