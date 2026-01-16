@@ -1198,34 +1198,180 @@ class AdminCMSEnhanced {
   }
 
   loadPortfolioForm() {
+    const data = this.contentData.portfolio || {
+      items: [
+        {
+          id: 1,
+          title: 'Salon Moderne Minimaliste',
+          category: 'interieur',
+          image: 'assets/images/portfolio/interior-1.jpg',
+          description: 'Design épuré et élégant pour un salon contemporain'
+        },
+        {
+          id: 2,
+          title: 'Chambre Cocooning',
+          category: 'interieur',
+          image: 'assets/images/portfolio/interior-2.jpg',
+          description: 'Ambiance chaleureuse et apaisante'
+        },
+        {
+          id: 3,
+          title: 'Terrasse Zen',
+          category: 'exterieur',
+          image: 'assets/images/portfolio/exterior-1.jpg',
+          description: 'Espace extérieur relaxant et harmonieux'
+        },
+        {
+          id: 4,
+          title: 'Jardin Paysager',
+          category: 'exterieur',
+          image: 'assets/images/portfolio/exterior-2.jpg',
+          description: 'Aménagement paysager sophistiqué'
+        },
+        {
+          id: 5,
+          title: 'Mariage Champêtre',
+          category: 'evenement',
+          image: 'assets/images/portfolio/event-1.jpg',
+          description: 'Décoration romantique et naturelle'
+        },
+        {
+          id: 6,
+          title: 'Anniversaire Glamour',
+          category: 'evenement',
+          image: 'assets/images/portfolio/event-2.jpg',
+          description: 'Fête élégante et festive'
+        },
+        {
+          id: 7,
+          title: 'Cuisine Contemporaine',
+          category: 'interieur',
+          image: 'assets/images/portfolio/interior-3.jpg',
+          description: 'Design fonctionnel et esthétique'
+        },
+        {
+          id: 8,
+          title: 'Patio Méditerranéen',
+          category: 'exterieur',
+          image: 'assets/images/portfolio/exterior-3.jpg',
+          description: 'Ambiance vacances au quotidien'
+        },
+        {
+          id: 9,
+          title: 'Réception Corporate',
+          category: 'evenement',
+          image: 'assets/images/portfolio/event-3.jpg',
+          description: 'Événement professionnel haut de gamme'
+        }
+      ]
+    };
+
+    const portfolioHtml = data.items.map((item, index) => `
+      <div class="portfolio-item-card">
+        <div class="portfolio-image-container">
+          <img src="${item.image}" alt="${item.title}" onerror="this.src='assets/images/placeholder.jpg'">
+          <div class="portfolio-image-overlay">
+            <button type="button" class="image-change-btn" onclick="adminCMS.changePortfolioImage(${index})">
+              📷 Changer l'image
+            </button>
+          </div>
+        </div>
+        
+        <div class="portfolio-item-content">
+          <div class="portfolio-item-header">
+            <span class="portfolio-category-badge ${item.category}">${this.getCategoryLabel(item.category)}</span>
+          </div>
+          
+          <div class="portfolio-item-fields">
+            <input type="text" 
+                   name="portfolio_${index}_title" 
+                   value="${item.title}" 
+                   placeholder="Titre du projet"
+                   onchange="adminCMS.updatePortfolioItem(${index}, 'title', this.value)">
+            
+            <select name="portfolio_${index}_category" 
+                    onchange="adminCMS.updatePortfolioItem(${index}, 'category', this.value)">
+              <option value="interieur" ${item.category === 'interieur' ? 'selected' : ''}>Intérieur</option>
+              <option value="exterieur" ${item.category === 'exterieur' ? 'selected' : ''}>Extérieur</option>
+              <option value="evenement" ${item.category === 'evenement' ? 'selected' : ''}>Événement</option>
+            </select>
+            
+            <textarea name="portfolio_${index}_description" 
+                      placeholder="Description du projet"
+                      onchange="adminCMS.updatePortfolioItem(${index}, 'description', this.value)">${item.description}</textarea>
+            
+            <input type="text" 
+                   name="portfolio_${index}_image" 
+                   value="${item.image}" 
+                   placeholder="Chemin de l'image"
+                   onchange="adminCMS.updatePortfolioItem(${index}, 'image', this.value)">
+          </div>
+        </div>
+      </div>
+    `).join('');
+
     const html = `
-    <div class="form-section">
-      <h2 class="form-section-title">Portfolio</h2>
-      <p class="form-description">Le portfolio est géré dynamiquement via le fichier <code>scripts/main.js</code>.</p>
-      
-      <div class="info-box">
-        <h3>📁 Images Portfolio</h3>
-        <p>Les images du portfolio sont stockées dans <code>assets/images/portfolio/</code></p>
-        <ul>
-          <li>✅ 9 images présentes</li>
-          <li>✅ 3 catégories : Intérieur, Extérieur, Événements</li>
-          <li>✅ Filtres fonctionnels</li>
-        </ul>
+      <div class="form-section">
+        <h2 class="form-section-title">Gestion du Portfolio</h2>
+        <p class="form-description">
+          Modifiez les titres, descriptions et catégories de vos projets portfolio. 
+          Pour changer une image, cliquez sur le bouton "Changer l'image" ou modifiez directement le chemin.
+        </p>
+        
+        <div class="portfolio-items-grid">
+          ${portfolioHtml}
+        </div>
+        
+        <div class="info-box" style="margin-top: var(--admin-space-xl);">
+          <h3>💡 Conseils</h3>
+          <ul>
+            <li>Les images doivent être dans <code>assets/images/portfolio/</code></li>
+            <li>Format recommandé : JPG ou PNG, 1024x1024px minimum</li>
+            <li>Utilisez des noms de fichiers descriptifs (ex: <code>interior-1.jpg</code>)</li>
+            <li>Les modifications sont sauvegardées dans le CMS et appliquées au site</li>
+          </ul>
+        </div>
       </div>
-      
-      <div class="info-box">
-        <h3>🔧 Modification</h3>
-        <p>Pour modifier le portfolio :</p>
-        <ol>
-          <li>Ajouter/remplacer images dans <code>assets/images/portfolio/</code></li>
-          <li>Éditer <code>scripts/main.js</code> ligne 246-310</li>
-          <li>Mettre à jour les données du tableau <code>portfolioItems</code></li>
-        </ol>
-      </div>
-    </div>
-  `;
+    `;
 
     document.getElementById('contentArea').innerHTML = html;
+  }
+
+  getCategoryLabel(category) {
+    const labels = {
+      'interieur': 'Intérieur',
+      'exterieur': 'Extérieur',
+      'evenement': 'Événement'
+    };
+    return labels[category] || category;
+  }
+
+  updatePortfolioItem(index, field, value) {
+    if (!this.contentData.portfolio) {
+      this.contentData.portfolio = { items: [] };
+    }
+    if (!this.contentData.portfolio.items[index]) {
+      this.contentData.portfolio.items[index] = {};
+    }
+
+    this.contentData.portfolio.items[index][field] = value;
+    this.isDirty = true;
+    this.updateSaveButton();
+
+    // Reload form to update category badge
+    if (field === 'category') {
+      this.loadPortfolioForm();
+    }
+  }
+
+  changePortfolioImage(index) {
+    const newPath = prompt('Entrez le chemin de la nouvelle image (ex: assets/images/portfolio/mon-image.jpg):',
+      this.contentData.portfolio?.items[index]?.image || '');
+
+    if (newPath) {
+      this.updatePortfolioItem(index, 'image', newPath);
+      this.loadPortfolioForm();
+    }
   }
 
   loadTestimonialsForm() {
