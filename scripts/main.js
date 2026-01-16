@@ -248,63 +248,63 @@ class PortfolioFilter {
                 id: 1,
                 title: 'Salon Moderne Minimaliste',
                 category: 'interieur',
-                image: '/assets/images/portfolio/interior-1.jpg',
+                image: 'assets/images/portfolio/interior-1.jpg',
                 description: 'Design épuré et élégant pour un salon contemporain'
             },
             {
                 id: 2,
                 title: 'Chambre Cocooning',
                 category: 'interieur',
-                image: '/assets/images/portfolio/interior-2.jpg',
+                image: 'assets/images/portfolio/interior-2.jpg',
                 description: 'Ambiance chaleureuse et apaisante'
             },
             {
                 id: 3,
                 title: 'Terrasse Zen',
                 category: 'exterieur',
-                image: '/assets/images/portfolio/exterior-1.jpg',
+                image: 'assets/images/portfolio/exterior-1.jpg',
                 description: 'Espace extérieur relaxant et harmonieux'
             },
             {
                 id: 4,
                 title: 'Jardin Paysager',
                 category: 'exterieur',
-                image: '/assets/images/portfolio/exterior-2.jpg',
+                image: 'assets/images/portfolio/exterior-2.jpg',
                 description: 'Aménagement paysager sophistiqué'
             },
             {
                 id: 5,
                 title: 'Mariage Champêtre',
                 category: 'evenement',
-                image: '/assets/images/portfolio/event-1.jpg',
+                image: 'assets/images/portfolio/event-1.jpg',
                 description: 'Décoration romantique et naturelle'
             },
             {
                 id: 6,
                 title: 'Anniversaire Glamour',
                 category: 'evenement',
-                image: '/assets/images/portfolio/event-2.jpg',
+                image: 'assets/images/portfolio/event-2.jpg',
                 description: 'Fête élégante et festive'
             },
             {
                 id: 7,
                 title: 'Cuisine Contemporaine',
                 category: 'interieur',
-                image: '/assets/images/portfolio/interior-3.jpg',
+                image: 'assets/images/portfolio/interior-3.jpg',
                 description: 'Design fonctionnel et esthétique'
             },
             {
                 id: 8,
                 title: 'Patio Méditerranéen',
                 category: 'exterieur',
-                image: '/assets/images/portfolio/exterior-3.jpg',
+                image: 'assets/images/portfolio/exterior-3.jpg',
                 description: 'Ambiance vacances au quotidien'
             },
             {
                 id: 9,
                 title: 'Réception Corporate',
                 category: 'evenement',
-                image: '/assets/images/portfolio/event-3.jpg',
+                image: 'assets/images/portfolio/event-3.jpg',
                 description: 'Événement professionnel haut de gamme'
             }
         ];
