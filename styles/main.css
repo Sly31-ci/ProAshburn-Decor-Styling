@@ -53,8 +53,8 @@
   --gradient-gold: linear-gradient(135deg, #C9A55A 0%, #D4AF37 50%, #E8C968 100%);
   --gradient-primary: var(--gradient-luxury);
   --gradient-secondary: var(--gradient-gold);
-  --gradient-hero: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.90) 100%);
-  --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  --gradient-hero: linear-gradient(135deg, rgba(10, 10, 10, 0.4) 0%, rgba(26, 26, 26, 0.6) 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
   --gradient-shine: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
 
   /* Typography - Premium Luxury Fonts */
