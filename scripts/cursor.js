@@ -48,29 +48,48 @@ class CustomCursor {
         document.addEventListener('mousemove', (e) => {
             this.mouseX = e.clientX;
             this.mouseY = e.clientY;
+
+            // SAFETY: Force visibility when mouse moves
+            // This fixes cases where mouseleave might have hidden it incorrectly
+            if (this.cursor.style.opacity === '0' || this.cursor.style.visibility === 'hidden') {
+                this.cursor.style.opacity = '1';
+                this.cursor.style.visibility = 'visible';
+                this.cursorDot.style.opacity = '1';
+                this.cursorDot.style.visibility = 'visible';
+            }
         });
 
-        // Hover effects on interactive elements
-        const interactiveElements = 'a, button, input, textarea, select, .service-card, .portfolio-item, .testimonial-card, .filter-btn';
+        // Hover effects using event delegation to support dynamic elements (like popups)
+        const interactiveElements = 'a, button, input, textarea, select, .service-card, .portfolio-item, .testimonial-card, .filter-btn, [role="button"], .exit-popup-close';
 
-        document.querySelectorAll(interactiveElements).forEach(el => {
-            el.addEventListener('mouseenter', () => {
+        document.addEventListener('mouseover', (e) => {
+            const el = e.target.closest(interactiveElements);
+            if (el) {
                 this.cursor.classList.add('hover');
                 this.cursorDot.classList.add('hover');
 
-                // Specific states for different elements
-                if (el.tagName === 'A') {
+                if (el.tagName === 'A' || el.closest('a')) {
                     this.cursor.classList.add('link');
                 }
-                if (el.tagName === 'BUTTON' || el.classList.contains('btn')) {
+
+                const isButton = el.tagName === 'BUTTON' ||
+                    el.classList.contains('btn') ||
+                    el.closest('button') ||
+                    el.getAttribute('type') === 'submit' ||
+                    el.classList.contains('exit-popup-close');
+
+                if (isButton) {
                     this.cursor.classList.add('button');
                 }
-            });
+            }
+        });
 
-            el.addEventListener('mouseleave', () => {
+        document.addEventListener('mouseout', (e) => {
+            const el = e.target.closest(interactiveElements);
+            if (el) {
                 this.cursor.classList.remove('hover', 'link', 'button');
                 this.cursorDot.classList.remove('hover');
-            });
+            }
         });
 
         // Click effect
@@ -119,8 +138,17 @@ class CustomCursor {
 // Initialize after DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        new CustomCursor();
+        window.cursorInstance = new CustomCursor();
     });
 } else {
-    new CustomCursor();
+    window.cursorInstance = new CustomCursor();
 }
+
+// Expose for debugging
+window.cursorDebug = {
+    getInstance: () => window.cursorInstance,
+    updateZIndex: (val) => {
+        document.querySelector('.cursor').style.zIndex = val;
+        document.querySelector('.cursor-dot').style.zIndex = val;
+    }
+};
