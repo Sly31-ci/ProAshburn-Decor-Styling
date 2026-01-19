@@ -1,0 +1,226 @@
+/* iPhone 15, 14 Pro, and Modern Smartphones (390px - 430px) */
+@media (min-width: 390px) and (max-width: 430px) {
+
+    /* Navigation Ultra Compact */
+    .navbar .container {
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .logo-text {
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+
+    .logo-subtitle {
+        font-size: 0.625rem;
+        letter-spacing: 0.08em;
+    }
+
+    /* Hero Section - iPhone 15 Optimized */
+    .hero {
+        min-height: 88vh;
+        padding-top: 4rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem 0;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin: 0 auto 2rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.875rem, 7vw, 2.25rem) !important;
+        line-height: 1.15;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .gradient-text {
+        display: inline;
+        margin-top: 0.25rem;
+    }
+
+    .hero-description {
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Boutons Tactiles Optimisés */
+    .hero-cta {
+        flex-direction: column;
+        gap: 0.875rem;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+        min-height: 52px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hero-cta .btn:active {
+        transform: scale(0.98);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary:active {
+        background: linear-gradient(135deg, #0D0D0D 0%, #1D1D1D 100%);
+    }
+
+    .btn-secondary:active {
+        background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Stats Section */
+    .hero-stats {
+        padding: 1.25rem 1rem;
+        gap: 1rem;
+        margin-top: 2rem;
+        border-radius: 1rem;
+    }
+
+    .stat-item {
+        padding: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+        font-weight: 800;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+        bottom: 1.5rem;
+        opacity: 0.9;
+    }
+
+    .scroll-text {
+        font-size: 0.6875rem;
+    }
+
+    /* Sections Spacing */
+    section {
+        padding: 4rem 0;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-tag {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.875rem;
+        line-height: 1.2;
+    }
+
+    .section-description {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+    }
+
+    /* Service Cards */
+    .service-card {
+        margin-bottom: 1.25rem;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .service-image {
+        height: 220px;
+    }
+
+    .service-content {
+        padding: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .form-input-premium,
+    .form-select-premium,
+    .form-textarea-premium {
+        font-size: 1rem;
+        padding: 0.875rem 1rem;
+        min-height: 48px;
+    }
+
+    .btn-submit-premium {
+        min-height: 52px;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .testimonial-text {
+        font-size: 0.9375rem;
+        line-height: 1.7;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+        gap: 2rem;
+    }
+
+    /* Menu Toggle - Larger Touch Area */
+    .menu-toggle {
+        padding: 0.75rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* Smooth Scrolling Enhancement */
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Improve Touch Feedback */
+    a,
+    button,
+    .btn,
+    .filter-btn,
+    .slider-btn {
+        -webkit-tap-highlight-color: rgba(201, 165, 90, 0.2);
+    }
+}
