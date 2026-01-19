@@ -508,6 +508,79 @@ strong {
   /* Renforce la visibilité */
 }
 
+/* Google Reviews Badge */
+.google-reviews-badge {
+  text-align: center;
+  margin-top: var(--space-xl);
+  animation: fade-in-up 0.6s ease-out 0.3s both;
+}
+
+.reviews-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.reviews-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star-icon {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.reviews-rating {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-count {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 480px) {
+  .google-reviews-badge {
+    margin-top: var(--space-lg);
+  }
+
+  .reviews-link {
+    padding: var(--space-xs) var(--space-md);
+    gap: var(--space-xs);
+  }
+
+  .star-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .reviews-rating {
+    font-size: var(--font-size-base);
+  }
+
+  .reviews-count {
+    font-size: 0.75rem;
+  }
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: var(--space-xl);
@@ -907,6 +980,7 @@ section {
   grid-auto-rows: 250px;
   gap: var(--space-lg);
   grid-auto-flow: dense;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Staggered sizes for visual interest */
@@ -1323,6 +1397,31 @@ section {
 .social-link:hover {
   transform: translateY(-4px) scale(1.1);
   box-shadow: var(--shadow-lg);
+}
+
+/* WhatsApp specific styling */
+.social-link-whatsapp {
+  background: #25D366;
+  /* WhatsApp green */
+  animation: pulse-whatsapp 2s ease-in-out infinite;
+}
+
+.social-link-whatsapp:hover {
+  background: #128C7E;
+  /* Darker WhatsApp green */
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}
+
+@keyframes pulse-whatsapp {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(37, 211, 102, 0);
+  }
 }
 
 /* ============================================
