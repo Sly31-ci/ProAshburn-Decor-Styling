@@ -500,9 +500,12 @@ strong {
 
 .stat-label {
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-secondary);
+  /* Or Champagne pour effet premium */
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: var(--font-weight-semibold);
+  /* Renforce la visibilité */
 }
 
 .scroll-indicator {
