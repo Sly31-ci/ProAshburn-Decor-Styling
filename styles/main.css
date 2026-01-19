@@ -43,7 +43,8 @@
   --color-off-white: #FAFAFA;
   --color-light-gray: #F5F5F5;
   --color-gray: #E0E0E0;
-  --color-medium-gray: #9E9E9E;
+  --color-medium-gray: #666666;
+  /* Optimisé pour contraste WCAG AA (5.74:1) - Avant: #9E9E9E (2.73:1) */
   --color-dark-gray: #424242;
   --color-charcoal: #2B2B2B;
   --color-black: #1A1A1A;
@@ -631,6 +632,8 @@ section {
   font-size: var(--font-size-lg);
   color: var(--color-medium-gray);
   line-height: 1.8;
+  letter-spacing: 0.01em;
+  /* Aère le texte avec la nouvelle couleur plus sombre */
 }
 
 /* ============================================
@@ -690,6 +693,7 @@ section {
   color: var(--color-dark-gray);
   line-height: 1.8;
   margin-bottom: var(--space-lg);
+  letter-spacing: 0.01em;
 }
 
 .about-features {
