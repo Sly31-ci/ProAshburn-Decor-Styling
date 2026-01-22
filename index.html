@@ -57,6 +57,7 @@
     <link rel="stylesheet" href="styles/iphone15-optimizations.css">
     <link rel="stylesheet" href="styles/sticky-cta.css">
     <link rel="stylesheet" href="styles/exit-intent.css">
+    <link rel="stylesheet" href="styles/hero-v2.css">
 </head>
 
 <body>
@@ -83,87 +84,96 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - Optimisé UX/UI pour conversion -->
     <header class="hero" id="accueil">
         <div class="hero-background" data-parallax-speed="0.5" data-parallax-direction="vertical">
             <div class="hero-overlay" data-mouse-parallax="2"></div>
         </div>
 
         <div class="container hero-content">
-            <div class="hero-text fade-in-up" data-mouse-parallax="1.5">
-                <h1 class="hero-title shimmer" style="font-size: var(--font-size-hero);">
-                    Transformez Vos Espaces en
-                    <span class="gradient-text text-gradient-reveal">Œuvres d'Art</span>
+            <!-- Badge supérieur - Établit la crédibilité immédiatement -->
+            <div class="hero-badge-top fade-in-up">
+                <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M9 22V12h6v10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Décorateurs Professionnels</span>
+                <span class="badge-separator">•</span>
+                <span>10 ans d'expérience</span>
+            </div>
+
+            <div class="hero-text">
+                <!-- H1 optimisé : court, clair, orienté bénéfice client -->
+                <h1 class="hero-title fade-in-up">
+                    Des espaces magnifiés par une<br>
+                    <span class="gradient-text">décoration qui vous ressemble</span>
                 </h1>
-                <p class="hero-description">
-                    Experts en décoration d'intérieur, d'extérieur et événementielle.
-                    Nous donnons vie à vos rêves avec créativité et professionnalisme.
+
+                <!-- Sous-titre explicatif : énonce clairement les 3 services -->
+                <p class="hero-subtitle fade-in-up">
+                    Décoration <strong>intérieure</strong>, <strong>extérieure</strong> et <strong>à thème</strong>
+                    pour particuliers et professionnels.
                 </p>
-                <div class="hero-cta">
-                    <a href="#contact"
-                        class="btn btn-primary btn-large btn-magnetic glow-hover ripple-effect icon-bounce">
-                        Démarrer Votre Projet
-                        <svg class="btn-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
+
+                <!-- CTAs optimisés pour conversion -->
+                <div class="hero-cta fade-in-up">
+                    <a href="#contact" class="btn btn-primary btn-hero btn-magnetic glow-hover ripple-effect"
+                        aria-label="Demander un devis gratuit">
+                        <svg class="btn-icon-left" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
+                        Demander un devis gratuit
                     </a>
-                    <a href="#realisations" class="btn btn-secondary btn-large btn-magnetic ripple-effect">
-                        Voir Nos Réalisations
+                    <a href="#realisations" class="btn btn-secondary btn-hero btn-magnetic ripple-effect"
+                        aria-label="Découvrir nos réalisations">
+                        <svg class="btn-icon-left" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 10h8M8 14h4" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Découvrir nos réalisations
                     </a>
                 </div>
             </div>
 
-            <div class="hero-stats fade-in-up" style="animation-delay: 0.2s;">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="500">0</span>
-                    <span class="stat-label">Projets Réalisés</span>
+            <!-- Badges de réassurance - Visibilité immédiate des preuves sociales -->
+            <div class="hero-trust-badges fade-in-up">
+                <div class="trust-badge">
+                    <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span><strong>+500</strong> projets réalisés</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="98">0</span>
-                    <span class="stat-label">% Clients Satisfaits</span>
+                <div class="trust-badge">
+                    <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    <span><strong>98%</strong> clients satisfaits</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="10">0</span>
-                    <span class="stat-label">Ans d'Expérience</span>
+                <div class="trust-badge">
+                    <svg class="trust-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Décoration <strong>sur mesure</strong></span>
                 </div>
             </div>
         </div>
-
-        <!-- Google Reviews Badge - TEMPORAIREMENT MASQUÉ -->
-        <!-- Décommenter et configurer quand Google My Business sera actif
-        <div class="google-reviews-badge fade-in-up" style="animation-delay: 0.3s;">
-            <a href="https://www.google.com/maps/place/YOUR_BUSINESS_ID" target="_blank" rel="noopener noreferrer"
-                class="reviews-link">
-                <div class="reviews-stars">
-                    <svg class="star-icon" width="18" height="18" viewBox="0 0 20 20" fill="#FFA500">
-                        <path d="M10 1L12.5 7.5H19L14 11.5L16.5 18L10 14L3.5 18L6 11.5L1 7.5H7.5L10 1Z" />
-                    </svg>
-                    <svg class="star-icon" width="18" height="18" viewBox="0 0 20 20" fill="#FFA500">
-                        <path d="M10 1L12.5 7.5H19L14 11.5L16.5 18L10 14L3.5 18L6 11.5L1 7.5H7.5L10 1Z" />
-                    </svg>
-                    <svg class="star-icon" width="18" height="18" viewBox="0 0 20 20" fill="#FFA500">
-                        <path d="M10 1L12.5 7.5H19L14 11.5L16.5 18L10 14L3.5 18L6 11.5L1 7.5H7.5L10 1Z" />
-                    </svg>
-                    <svg class="star-icon" width="18" height="18" viewBox="0 0 20 20" fill="#FFA500">
-                        <path d="M10 1L12.5 7.5H19L14 11.5L16.5 18L10 14L3.5 18L6 11.5L1 7.5H7.5L10 1Z" />
-                    </svg>
-                    <svg class="star-icon" width="18" height="18" viewBox="0 0 20 20" fill="#FFA500">
-                        <path d="M10 1L12.5 7.5H19L14 11.5L16.5 18L10 14L3.5 18L6 11.5L1 7.5H7.5L10 1Z" />
-                    </svg>
-                </div>
-                <span class="reviews-rating">4.9/5</span>
-                <span class="reviews-count">(47 avis Google)</span>
-            </a>
-        </div>
-        -->
 
         <!-- Scroll Indicator Premium -->
         <div class="scroll-indicator">
             <div class="scroll-mouse">
                 <div class="scroll-wheel"></div>
             </div>
-            <p class="scroll-text">Découvrez nos réalisations</p>
+            <p class="scroll-text">Découvrez nos services</p>
         </div>
     </header>
 
