@@ -1,0 +1,444 @@
+/* ============================================
+   HERO SECTION V2.1 - PREMIUM ENHANCEMENTS
+   Améliorations ultra-premium de la HERO
+   ============================================ */
+
+/* ============================================
+   EFFET PARALLAX AMÉLIORÉ
+   ============================================ */
+.hero-background {
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+}
+
+/* Overlay avec gradient radial premium */
+.hero-overlay {
+    background: radial-gradient(ellipse at 50% 30%,
+            rgba(212, 175, 55, 0.15) 0%,
+            rgba(201, 165, 90, 0.08) 30%,
+            transparent 70%);
+    mix-blend-mode: overlay;
+}
+
+/* ============================================
+   BADGE SUPÉRIEUR - VERSION PREMIUM
+   ============================================ */
+.hero-badge-top {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Effet de brillance qui traverse le badge */
+.hero-badge-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
+    animation: badge-shine 4s infinite;
+    animation-delay: 2s;
+}
+
+@keyframes badge-shine {
+
+    0%,
+    100% {
+        left: -100%;
+    }
+
+    50% {
+        left: 100%;
+    }
+}
+
+/* ============================================
+   TITRE H1 - ANIMATIONS PREMIUM
+   ============================================ */
+
+/* Effet de glow subtil sur le gradient */
+.hero-title .gradient-text {
+    position: relative;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    animation: text-glow 4s ease-in-out infinite;
+}
+
+@keyframes text-glow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.3));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+    }
+}
+
+/* Effet de typing sur le titre (optionnel - à activer via JS) */
+.hero-title.typing-effect {
+    overflow: hidden;
+    border-right: 3px solid rgba(212, 175, 55, 0.8);
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: rgba(212, 175, 55, 0.8);
+    }
+}
+
+/* ============================================
+   BADGES DE RÉASSURANCE - COMPTEURS ANIMÉS
+   ============================================ */
+
+/* Animation de compteur pour les chiffres */
+.trust-badge strong {
+    display: inline-block;
+    position: relative;
+}
+
+/* Effet de pulse sur les badges au hover */
+.trust-badge:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(212, 175, 55, 0.5);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+}
+
+.trust-badge:hover .trust-icon {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+}
+
+.trust-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   CTAs - EFFETS PREMIUM
+   ============================================ */
+
+/* Effet de ripple amélioré sur le CTA primaire */
+.btn-hero.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn-hero.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Effet de particules sur le CTA secondaire */
+.btn-hero.btn-secondary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-hero.btn-secondary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, 0.1) 10%,
+            transparent 10%);
+    background-size: 20px 20px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-hero.btn-secondary:hover::after {
+    opacity: 1;
+    animation: particles-float 3s linear infinite;
+}
+
+@keyframes particles-float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(20px, 20px);
+    }
+}
+
+/* ============================================
+   PARTICULES D'ARRIÈRE-PLAN
+   ============================================ */
+
+/* Particules flottantes subtiles */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle, rgba(212, 175, 55, 0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    background-position: 0 0, 40px 40px;
+    opacity: 0.3;
+    animation: particles-drift 60s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes particles-drift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+/* ============================================
+   SCROLL INDICATOR - VERSION PREMIUM
+   ============================================ */
+
+.scroll-indicator {
+    position: relative;
+}
+
+/* Effet de glow sur la souris */
+.scroll-mouse {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-mouse {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    border-color: rgba(212, 175, 55, 0.6);
+}
+
+/* Animation améliorée de la molette */
+.scroll-wheel {
+    background: linear-gradient(180deg,
+            rgba(212, 175, 55, 0.9) 0%,
+            rgba(255, 255, 255, 0.8) 100%);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+/* ============================================
+   EFFET DE PROFONDEUR 3D
+   ============================================ */
+
+/* Légère perspective 3D sur le contenu */
+.hero-content {
+    perspective: 1000px;
+}
+
+.hero-text {
+    transform-style: preserve-3d;
+}
+
+/* Les éléments se lèvent légèrement au scroll */
+.hero-badge-top,
+.hero-title,
+.hero-subtitle,
+.hero-cta,
+.hero-trust-badges {
+    transform: translateZ(0);
+    transition: transform 0.3s ease-out;
+}
+
+/* ============================================
+   EFFET DE VERRE (GLASSMORPHISM) RENFORCÉ
+   ============================================ */
+
+.hero-badge-top,
+.trust-badge {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================
+   AMÉLIORATION DU CONTRASTE
+   ============================================ */
+
+/* Ombre portée plus prononcée sur les textes */
+.hero-title,
+.hero-subtitle {
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.hero-badge-top span,
+.trust-badge span {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================
+   ANIMATIONS D'ENTRÉE AMÉLIORÉES
+   ============================================ */
+
+/* Fade-in avec légère rotation */
+@keyframes fadeInUpRotate {
+    from {
+        opacity: 0;
+        transform: translateY(40px) rotateX(10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+/* Appliquer aux éléments avec classe spéciale */
+.hero-badge-top.premium-entrance {
+    animation: fadeInUpRotate 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.1s both;
+}
+
+.hero-title.premium-entrance {
+    animation: fadeInUpRotate 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.hero-subtitle.premium-entrance {
+    animation: fadeInUpRotate 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+.hero-cta.premium-entrance {
+    animation: fadeInUpRotate 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.hero-trust-badges.premium-entrance {
+    animation: fadeInUpRotate 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+
+/* ============================================
+   EFFET DE FOCUS MAGNÉTIQUE
+   ============================================ */
+
+/* Les CTAs suivent légèrement le curseur */
+.btn-hero {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Activé via JavaScript pour un effet magnétique */
+.btn-hero.magnetic-active {
+    transform: translate(var(--mouse-x, 0), var(--mouse-y, 0)) translateY(-3px);
+}
+
+/* ============================================
+   RESPONSIVE - AJUSTEMENTS PREMIUM
+   ============================================ */
+
+@media (max-width: 768px) {
+
+    /* Désactiver certains effets lourds sur mobile */
+    .hero::before {
+        animation: none;
+        opacity: 0.2;
+    }
+
+    .hero-title .gradient-text {
+        animation: none;
+        filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+    }
+
+    .btn-hero.btn-primary::before,
+    .btn-hero.btn-secondary::after {
+        display: none;
+    }
+}
+
+/* ============================================
+   PERFORMANCE - OPTIMISATIONS GPU
+   ============================================ */
+
+.hero-background,
+.hero-overlay,
+.hero-badge-top,
+.hero-title,
+.hero-subtitle,
+.hero-cta,
+.trust-badge,
+.btn-hero {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* ============================================
+   DARK MODE SUPPORT (optionnel)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+
+    .hero-badge-top,
+    .trust-badge {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+}
+
+/* ============================================
+   PRINT - DÉSACTIVER EFFETS
+   ============================================ */
+
+@media print {
+
+    .hero::before,
+    .hero-badge-top::before,
+    .btn-hero::before,
+    .btn-hero::after {
+        display: none;
+    }
+
+    .hero-title .gradient-text,
+    .scroll-mouse {
+        animation: none;
+        filter: none;
+        box-shadow: none;
+    }
+}
