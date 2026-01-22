@@ -37,6 +37,20 @@
 }
 
 /* ============================================
+   HERO TEXT - Centrage parfait
+   ============================================ */
+.hero-text {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+
+/* ============================================
    TITRE H1 - Impact maximal
    ============================================ */
 .hero-title {
