@@ -1,0 +1,427 @@
+/* ============================================
+   HERO SECTION - VERSION PROFESSIONNELLE
+   Design Corporate Ultra-Premium
+   ============================================ */
+
+/* ============================================
+   RESET HERO - Style Professionnel
+   ============================================ */
+.hero {
+    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay subtil pour profondeur */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(201, 165, 90, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Background image avec overlay professionnel */
+.hero-background {
+    opacity: 0.15;
+    filter: grayscale(30%);
+}
+
+.hero-background::before {
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.75) 50%,
+            rgba(0, 0, 0, 0.85) 100%);
+}
+
+/* ============================================
+   LAYOUT PROFESSIONNEL
+   ============================================ */
+.hero-content {
+    max-width: 1200px;
+    padding: 8rem 2rem 6rem;
+}
+
+.hero-text {
+    max-width: 800px;
+}
+
+/* ============================================
+   BADGE SUPÉRIEUR - Version Corporate
+   ============================================ */
+.hero-badge-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #C9A55A;
+    background: rgba(201, 165, 90, 0.08);
+    border: 1px solid rgba(201, 165, 90, 0.2);
+    border-radius: 2px;
+    backdrop-filter: none;
+    box-shadow: none;
+}
+
+.hero-badge-top .badge-icon {
+    width: 14px;
+    height: 14px;
+    stroke: #C9A55A;
+}
+
+.hero-badge-top .badge-separator {
+    color: rgba(201, 165, 90, 0.4);
+    margin: 0 0.25rem;
+}
+
+/* ============================================
+   TITRE H1 - Typographie Professionnelle
+   ============================================ */
+.hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    text-shadow: none;
+}
+
+.hero-title .gradient-text {
+    display: inline;
+    color: #C9A55A;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    font-style: normal;
+    font-weight: 400;
+    position: relative;
+}
+
+/* Soulignement élégant */
+.hero-title .gradient-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #C9A55A 0%, #D4AF37 100%);
+    animation: none;
+}
+
+/* ============================================
+   SOUS-TITRE - Clarté Professionnelle
+   ============================================ */
+.hero-subtitle {
+    font-family: var(--font-primary);
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 400;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 650px;
+    margin: 0 auto 3rem;
+    text-shadow: none;
+}
+
+.hero-subtitle strong {
+    font-weight: 600;
+    color: #FFFFFF;
+    text-shadow: none;
+}
+
+/* ============================================
+   CTAs - Design Corporate
+   ============================================ */
+.hero-cta {
+    gap: 1.25rem;
+    margin-bottom: 4rem;
+}
+
+.btn-hero {
+    min-width: 200px;
+    padding: 1.125rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* CTA Primaire - Élégant et sobre */
+.btn-hero.btn-primary {
+    background: #C9A55A;
+    color: #0A0A0A;
+    border: 2px solid #C9A55A;
+    box-shadow: none;
+    animation: none;
+}
+
+.btn-hero.btn-primary:hover {
+    background: transparent;
+    color: #C9A55A;
+    border-color: #C9A55A;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201, 165, 90, 0.25);
+}
+
+/* CTA Secondaire - Outline élégant */
+.btn-hero.btn-secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    backdrop-filter: none;
+}
+
+.btn-hero.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+.btn-icon-left {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================
+   BADGES DE RÉASSURANCE - Style Corporate
+   ============================================ */
+.hero-trust-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trust-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    backdrop-filter: none;
+    text-align: center;
+}
+
+.trust-badge:hover {
+    background: rgba(255, 255, 255, 0.03);
+    transform: none;
+    box-shadow: none;
+}
+
+.trust-icon {
+    width: 32px;
+    height: 32px;
+    stroke: #C9A55A;
+    fill: none;
+    stroke-width: 1.5;
+}
+
+.trust-badge span {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.01em;
+}
+
+.trust-badge strong {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #C9A55A;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-display);
+}
+
+/* ============================================
+   SCROLL INDICATOR - Minimaliste
+   ============================================ */
+.scroll-indicator {
+    opacity: 0.6;
+}
+
+.scroll-mouse {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+}
+
+.scroll-text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ============================================
+   ANIMATIONS - Subtiles et Professionnelles
+   ============================================ */
+@keyframes fadeInUpPro {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-badge-top {
+    animation: fadeInUpPro 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.hero-title {
+    animation: fadeInUpPro 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both;
+}
+
+.hero-subtitle {
+    animation: fadeInUpPro 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+}
+
+.hero-cta {
+    animation: fadeInUpPro 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+
+.hero-trust-badges {
+    animation: fadeInUpPro 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+}
+
+/* ============================================
+   RESPONSIVE - Professionnel
+   ============================================ */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 6rem 1.5rem 4rem;
+    }
+
+    .hero-badge-top {
+        font-size: 0.75rem;
+        padding: 0.4rem 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 2.75rem);
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .btn-hero {
+        width: 100%;
+        max-width: 320px;
+        padding: 1rem 2rem;
+    }
+
+    .hero-trust-badges {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding-top: 2.5rem;
+    }
+
+    .trust-badge {
+        padding: 1.25rem 1rem;
+    }
+
+    .trust-badge strong {
+        font-size: 1.75rem;
+    }
+}
+
+/* ============================================
+   DÉSACTIVER EFFETS PREMIUM
+   ============================================ */
+
+/* Désactiver particules */
+.hero::before {
+    display: none !important;
+}
+
+/* Désactiver glow */
+.hero-title .gradient-text {
+    animation: none !important;
+    filter: none !important;
+}
+
+/* Désactiver glassmorphism excessif */
+.hero-badge-top,
+.trust-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Simplifier les ombres */
+.btn-hero {
+    box-shadow: none !important;
+}
+
+.btn-hero:hover {
+    box-shadow: 0 8px 24px rgba(201, 165, 90, 0.25) !important;
+}
+
+/* ============================================
+   ACCESSIBILITÉ
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-badge-top,
+    .hero-title,
+    .hero-subtitle,
+    .hero-cta,
+    .hero-trust-badges {
+        animation: none;
+    }
+
+    .btn-hero:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   PRINT
+   ============================================ */
+@media print {
+    .hero {
+        background: white;
+        color: black;
+    }
+
+    .hero-title,
+    .hero-subtitle {
+        color: black;
+    }
+
+    .hero-title .gradient-text {
+        color: #C9A55A;
+    }
+
+    .btn-hero {
+        border: 2px solid black;
+        color: black;
+    }
+}
