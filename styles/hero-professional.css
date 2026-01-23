@@ -119,17 +119,7 @@
     position: relative;
 }
 
-/* Soulignement élégant */
-.hero-title .gradient-text::after {
-    content: '';
-    position: absolute;
-    bottom: 0.1em;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #C9A55A 0%, #D4AF37 100%);
-    animation: none;
-}
+
 
 /* ============================================
    SOUS-TITRE - Clarté Professionnelle
