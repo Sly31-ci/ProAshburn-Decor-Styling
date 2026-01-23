@@ -4,15 +4,16 @@
    ============================================ */
 
 /* ============================================
-   RESET HERO - Style Professionnel
+   RESET HERO - Style Professionnel avec Image
    ============================================ */
 .hero {
-    background: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
     position: relative;
     overflow: hidden;
+    background: #0A0A0A;
+    /* Fallback si image ne charge pas */
 }
 
-/* Overlay subtil pour profondeur */
+/* Overlay sombre pour garantir la lisibilité */
 .hero::after {
     content: '';
     position: absolute;
@@ -20,27 +21,35 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(201, 165, 90, 0.05) 0%, transparent 70%);
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.65) 50%,
+            rgba(0, 0, 0, 0.75) 100%);
     pointer-events: none;
+    z-index: 1;
 }
 
-/* Background image avec overlay professionnel */
+/* Background image bien visible */
 .hero-background {
-    opacity: 0.15;
-    filter: grayscale(30%);
+    opacity: 1;
+    /* Image à 100% visible */
+    filter: brightness(0.7) contrast(1.1);
+    /* Légèrement assombrie pour contraste */
+    z-index: 0;
 }
 
 .hero-background::before {
-    background: linear-gradient(135deg,
-            rgba(0, 0, 0, 0.85) 0%,
-            rgba(0, 0, 0, 0.75) 50%,
-            rgba(0, 0, 0, 0.85) 100%);
+    display: none;
+    /* Supprimé car on a déjà ::after sur .hero */
 }
 
 /* ============================================
    LAYOUT PROFESSIONNEL
    ============================================ */
 .hero-content {
+    position: relative;
+    z-index: 2;
+    /* Au-dessus de l'overlay pour visibilité */
     max-width: 1200px;
     padding: 8rem 2rem 6rem;
 }
@@ -63,11 +72,11 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #C9A55A;
-    background: rgba(201, 165, 90, 0.08);
-    border: 1px solid rgba(201, 165, 90, 0.2);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(201, 165, 90, 0.4);
     border-radius: 2px;
-    backdrop-filter: none;
-    box-shadow: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-badge-top .badge-icon {
@@ -92,7 +101,10 @@
     letter-spacing: -0.02em;
     color: #FFFFFF;
     margin-bottom: 2rem;
-    text-shadow: none;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .hero-title .gradient-text {
@@ -126,16 +138,20 @@
     font-size: clamp(1.125rem, 2vw, 1.375rem);
     font-weight: 400;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.95);
     max-width: 650px;
     margin: 0 auto 3rem;
-    text-shadow: none;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle strong {
     font-weight: 600;
     color: #FFFFFF;
-    text-shadow: none;
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.6),
+        0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* ============================================
