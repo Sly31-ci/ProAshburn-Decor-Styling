@@ -1,0 +1,47 @@
+/* ============================================
+   FIX BACKGROUND STABLE - Désactivation Parallax
+   À ajouter à la fin de hero-professional.css
+   ============================================ */
+
+/* Désactiver tous les effets de parallax et animations sur le background */
+.hero-background {
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+    will-change: auto !important;
+}
+
+/* Désactiver les data-parallax attributes */
+[data-parallax-speed],
+[data-parallax-direction],
+[data-mouse-parallax] {
+    transform: none !important;
+    transition: none !important;
+}
+
+/* Stabiliser le background */
+.hero-background,
+.hero-background::before,
+.hero-background::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Désactiver le parallax premium si activé */
+.hero::before {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Assurer que le contenu ne bouge pas non plus */
+.hero-content,
+.hero-text,
+.hero-overlay {
+    transform: none !important;
+    transition: opacity 0.3s ease !important;
+}
